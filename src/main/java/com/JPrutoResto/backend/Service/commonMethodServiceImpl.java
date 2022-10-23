@@ -24,4 +24,9 @@ public class commonMethodServiceImpl implements commonMethodService {
         packageRepository.save(packages);
         return "Added";
     }
+
+    @Override
+    public List<Packages> getPackages() {
+        return packageRepository.findAll();
+    }
 }

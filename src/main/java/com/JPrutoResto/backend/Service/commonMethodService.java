@@ -9,4 +9,6 @@ public interface commonMethodService {
 
     String addPackage(Packages packages);
 
+    List<Packages> getPackages();
+
 }
