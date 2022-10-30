@@ -4,6 +4,8 @@ package com.JPrutoResto.backend.Service;
 
 
 
+import com.JPrutoResto.backend.Entity.Bookings;
+import com.JPrutoResto.backend.Entity.Customers;
 import com.JPrutoResto.backend.Entity.Packages;
 import com.JPrutoResto.backend.Repository.packageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +30,25 @@ public class commonMethodServiceImpl implements commonMethodService {
     @Override
     public List<Packages> getPackages() {
         return packageRepository.findAll();
+    }
+
+    @Override
+    public String addCustomer(Customers customers) {
+        return null;
+    }
+
+    @Override
+    public List<Customers> getCustomers() {
+        return null;
+    }
+
+    @Override
+    public String addBooking(Bookings bookings) {
+        return null;
+    }
+
+    @Override
+    public List<Bookings> getBooking() {
+        return null;
     }
 }
