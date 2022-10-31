@@ -1,13 +1,13 @@
 package com.JPrutoResto.backend.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -20,9 +20,14 @@ public class Customers {
     private String name;
     private Integer contact1;
     private Integer contact2;
+    private String nic;
     private String email;
 
 
+    @OneToMany(mappedBy = "customers", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference("customer-bookings")
+    @ToString.Exclude
+    private List<Bookings> Bookings;
     public Customers() {
     }
 }
