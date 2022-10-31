@@ -122,10 +122,10 @@ public class commonMethodServiceImpl implements commonMethodService {
     }
 
     @Override
-    public List<Bookings> getBooking() {
+    public List<resBookingBody> getBooking() {
         List<Packages> packages = packageRepository.findAll();
         List<getBookingBody> bookingBodies = new ArrayList<>();
-        List<Bookings> bookings = new ArrayList<>();
+        List<resBookingBody> bookings = new ArrayList<>();
         for(Packages packages1 : packages){
             List<Bookings> bookings1 = packages1.getBookings();
             for(Bookings bookings2 : bookings1){
@@ -141,6 +141,7 @@ public class commonMethodServiceImpl implements commonMethodService {
                 getBookingBody getBookingBody = new getBookingBody();
                 getBookingBody.setBookings(bookings2);
                 getBookingBody.setMinCount(minCountGiven);
+                getBookingBody.setId(packages1.getId());
                 if (minCountGiven>minCount){
                     bookingBodies.add(getBookingBody);
                 }
@@ -175,7 +176,10 @@ public class commonMethodServiceImpl implements commonMethodService {
         }
 
         for(getBookingBody bookingBody : bookingBodies){
-            bookings.add(bookingBody.getBookings());
+            resBookingBody resBookingBody = new resBookingBody();
+            resBookingBody.setBookings(bookingBody.getBookings());
+            resBookingBody.setPackageId(bookingBody.getId());
+            bookings.add(resBookingBody);
         }
         return bookings;
     }

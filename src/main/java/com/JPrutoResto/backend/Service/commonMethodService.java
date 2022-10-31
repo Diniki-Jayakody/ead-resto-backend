@@ -14,7 +14,7 @@ public interface commonMethodService {
     List<Customers> getCustomers();
 
     String addBooking(addBookingBody bookings);
-    List<Bookings> getBooking();
+    List<resBookingBody> getBooking();
 
     List<packageName> getPackageUrlNames();
 

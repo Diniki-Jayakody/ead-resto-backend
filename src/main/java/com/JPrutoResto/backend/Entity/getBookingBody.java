@@ -11,6 +11,7 @@ public class getBookingBody {
 
     private Bookings bookings;
     private int minCount;
+    private Long id;
 
 
     public getBookingBody() {

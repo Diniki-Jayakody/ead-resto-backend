@@ -45,7 +45,7 @@ public class mainController {
     }
 
     @GetMapping("/getBooking")
-    private List<Bookings> getBooking(){
+    private List<resBookingBody> getBooking(){
         return commonMethodService.getBooking();
     }
 
