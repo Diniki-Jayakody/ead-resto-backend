@@ -68,7 +68,7 @@ public class mainController {
         return commonMethodService.getPackagesByPackageUrl(id);
     }
 
-    @PutMapping("/availabilityUpdate/{id}/availability")
+    @PutMapping("/availabilityUpdate/{id}/{availability}")
     private String updatePackage(@PathVariable Long id , @PathVariable boolean availability){
         return commonMethodService.updateAvailabilityOFPackage(id, availability);
     }
